@@ -6,20 +6,20 @@ import csv
 city = input('Enter City')
 url = 'https://www.wunderground.com/weather/in/' + city
 
-try:
+try
 	response = requests.get(url)
 except requests.exceptions.RequestException as e:
 	print(e)
 	exit(1)
 
-try:
+try
 	response.raise_for_status()
 except Exception as e:
 	print(e)
 	exit(1)
 
 
-html = response.text
+html = responsetext
 soup = BeautifulSoup(html, 'lxml')
 out2 = soup.find(class_="small-12 medium-4 large-3 columns forecast-wrap")
 out3 = out2.find(class_="columns small-12")
